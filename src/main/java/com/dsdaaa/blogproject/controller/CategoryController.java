@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/category")
-@Tag(name = "body参数")
+@Tag(name = "类型接口")
 @Slf4j
 public class CategoryController {
     @Resource
