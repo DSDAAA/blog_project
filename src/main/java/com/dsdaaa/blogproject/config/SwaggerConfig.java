@@ -1,15 +1,11 @@
 package com.dsdaaa.blogproject.config;
 
-import cn.hutool.core.util.RandomUtil;
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.info.License;
-import org.springdoc.core.customizers.GlobalOpenApiCustomizer;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /***
  * 创建Swagger配置
@@ -25,33 +21,22 @@ public class SwaggerConfig {
      * @return the global open api customizer
      */
     @Bean
-    public GlobalOpenApiCustomizer orderGlobalOpenApiCustomizer() {
-        return openApi -> {
-            if (openApi.getTags()!=null){
-                openApi.getTags().forEach(tag -> {
-                    Map<String,Object> map=new HashMap<>();
-                    map.put("x-order", RandomUtil.randomInt(0,100));
-                    tag.setExtensions(map);
-                });
-            }
-            if(openApi.getPaths()!=null){
-                openApi.addExtension("x-test123","333");
-                openApi.getPaths().addExtension("x-abb",RandomUtil.randomInt(1,100));
-            }
-
-        };
+    public GroupedOpenApi adminApi() {      // 创建了一个api接口的分组
+        return GroupedOpenApi.builder()
+                .group("admin-api")         // 分组名称
+                .pathsToMatch("/**")  // 接口请求路径规则
+                .build();
     }
 
     @Bean
     public OpenAPI customOpenAPI() {
+
         return new OpenAPI()
                 .info(new Info()
-                        .title("微头条系统API")
+                        .title("微博客API接口文档")
                         .version("1.0")
-                        .description( "SpringBoot3+Redis+Mybatis+MybatisPlus")
-                        .termsOfService("http://doc.xiaominfo.com")
-                        .license(new License().name("Apache 2.0")
-                                .url("http://doc.xiaominfo.com")));
+                        .description("微博客API接口文档")
+                        .contact(new Contact().name("DunSton"))); // 设定作者
     }
 
 
