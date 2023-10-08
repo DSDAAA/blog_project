@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dsdaaa.blogproject.domain.Category;
 import com.dsdaaa.blogproject.service.CategoryService;
 import com.dsdaaa.blogproject.utils.Result;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +34,10 @@ public class CategoryController {
      * @return
      */
     @PostMapping("/findPage/{pageNum}/{pageSize}")
+    @Operation(summary = "分页查询")
+    @Parameters(value = {@Parameter(name = "页数", required = false),
+            @Parameter(name = "总数", required = false),
+            @Parameter(name = "类型", required = false)})
     public Result<Page> findPage(@PathVariable Integer pageNum,
                                  @PathVariable Integer pageSize,
                                  @RequestBody Category category) {
