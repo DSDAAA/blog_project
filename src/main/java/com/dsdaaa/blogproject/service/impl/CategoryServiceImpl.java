@@ -30,10 +30,65 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category>
      */
     @Override
     public Page findPage(Integer pageNum, Integer pageSize, Category category) {
+        Page page = new Page(pageNum, pageSize);
         QueryWrapper queryWrapper = new QueryWrapper();
-        queryWrapper.isNotNull("cid");
-        Page page = categoryMapper.selectPage(new Page<>(), queryWrapper);
+        queryWrapper.isNotNull("create_time");
+        categoryMapper.selectPage(page, queryWrapper);
         return page;
+    }
+
+    /**
+     * 增加类别
+     *
+     * @param category
+     * @return
+     */
+    @Override
+    public Boolean insertCategory(Category category) {
+        int insert = categoryMapper.insert(category);
+        if (insert != 0) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 根据id获取类别
+     *
+     * @param cid
+     * @return
+     */
+    @Override
+    public Category getCategoryById(Long cid) {
+        Category category = categoryMapper.selectById(cid);
+        return category;
+    }
+
+    /**
+     * 更新类别
+     *
+     * @param category
+     * @return
+     */
+    @Override
+    public Integer update(Category category) {
+        int i = categoryMapper.updateById(category);
+        return i;
+    }
+
+    /**
+     * 根据id删除类别
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Boolean deleteById(Long id) {
+        int i = categoryMapper.deleteById(id);
+        if (i != 0) {
+            return true;
+        }
+        return false;
     }
 }
 
