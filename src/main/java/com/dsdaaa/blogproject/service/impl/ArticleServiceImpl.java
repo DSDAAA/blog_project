@@ -72,6 +72,15 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
         int i = articleMapper.updateById(article);
         return i;
     }
+
+    @Override
+    public Boolean deleteById(Long id) {
+        int i = articleMapper.deleteById(id);
+        if (i != 0) {
+            return true;
+        }
+        return false;
+    }
 }
 
 

@@ -46,13 +46,28 @@ public class ArticleController {
      * @param id
      * @return
      */
-    @GetMapping("articleId")
+    @GetMapping("/getById/{id}")
     @Operation(summary = "根据id获取文章")
     @Parameters(value = {@Parameter(name = "文章id", required = false)})
-    public Result<Article> getArticleList(@RequestParam Long id) {
+    public Result<Article> getArticle(@PathVariable Long id) {
         log.info("接收参数:" + id);
         Article articleById = articleService.getArticleById(id);
         return Result.ok(articleById);
+    }
+
+    /**
+     * 根据id删除文章
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/deleteById/{id}")
+    @Operation(summary = "根据id获取文章")
+    @Parameters(value = {@Parameter(name = "文章id", required = false)})
+    public Result<Boolean> deleteArtcle(@PathVariable Long id) {
+        log.info("接收参数:" + id);
+        Boolean deleted = articleService.deleteById(id);
+        return Result.ok(deleted);
     }
 
     /**
