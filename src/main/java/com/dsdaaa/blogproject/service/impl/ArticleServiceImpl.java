@@ -44,6 +44,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
      * @return
      */
     @Override
+    @Transactional(readOnly = false)
     public Boolean insertArticle(Article article) {
         int insert = articleMapper.insert(article);
         return true;
@@ -68,12 +69,14 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
      * @return
      */
     @Override
+    @Transactional(readOnly = false)
     public Integer update(Article article) {
         int i = articleMapper.updateById(article);
         return i;
     }
 
     @Override
+    @Transactional(readOnly = false)
     public Boolean deleteById(Long id) {
         int i = articleMapper.deleteById(id);
         if (i != 0) {

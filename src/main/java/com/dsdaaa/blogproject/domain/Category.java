@@ -10,30 +10,29 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- *
  * @TableName category
  */
-@TableName(value ="category")
+@TableName(value = "category")
 @Data
 public class Category implements Serializable {
     /**
-     *类别id
+     * 类别id
      */
     @TableId(type = IdType.AUTO)
     private Long cid;
 
     /**
-     *类名
+     * 类名
      */
     private String cname;
 
     /**
-     *创建时间
+     * 创建时间
      */
     private Date create_time;
 
     /**
-     *更新时间
+     * 更新时间
      */
     private Date update_time;
 
@@ -53,9 +52,9 @@ public class Category implements Serializable {
         }
         Category other = (Category) that;
         return (this.getCid() == null ? other.getCid() == null : this.getCid().equals(other.getCid()))
-            && (this.getCname() == null ? other.getCname() == null : this.getCname().equals(other.getCname()))
-            && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
-            && (this.getUpdate_time() == null ? other.getUpdate_time() == null : this.getUpdate_time().equals(other.getUpdate_time()));
+                && (this.getCname() == null ? other.getCname() == null : this.getCname().equals(other.getCname()))
+                && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
+                && (this.getUpdate_time() == null ? other.getUpdate_time() == null : this.getUpdate_time().equals(other.getUpdate_time()));
     }
 
     @Override

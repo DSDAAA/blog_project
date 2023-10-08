@@ -10,45 +10,44 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- *
  * @TableName user
  */
-@TableName(value ="user")
+@TableName(value = "user")
 @Data
 public class User implements Serializable {
     /**
-     *用户id
+     * 用户id
      */
     @TableId(type = IdType.AUTO)
     private Long uid;
 
     /**
-     *用户名
+     * 用户名
      */
     private String username;
 
     /**
-     *密码
+     * 密码
      */
     private String password;
 
     /**
-     *手机号
+     * 手机号
      */
     private String phone;
 
     /**
-     *简介
+     * 简介
      */
     private String introduction;
 
     /**
-     *创建时间
+     * 创建时间
      */
     private Date create_time;
 
     /**
-     *更新时间
+     * 更新时间
      */
     private Date update_time;
 
@@ -68,12 +67,12 @@ public class User implements Serializable {
         }
         User other = (User) that;
         return (this.getUid() == null ? other.getUid() == null : this.getUid().equals(other.getUid()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
-            && (this.getIntroduction() == null ? other.getIntroduction() == null : this.getIntroduction().equals(other.getIntroduction()))
-            && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
-            && (this.getUpdate_time() == null ? other.getUpdate_time() == null : this.getUpdate_time().equals(other.getUpdate_time()));
+                && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
+                && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
+                && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
+                && (this.getIntroduction() == null ? other.getIntroduction() == null : this.getIntroduction().equals(other.getIntroduction()))
+                && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
+                && (this.getUpdate_time() == null ? other.getUpdate_time() == null : this.getUpdate_time().equals(other.getUpdate_time()));
     }
 
     @Override

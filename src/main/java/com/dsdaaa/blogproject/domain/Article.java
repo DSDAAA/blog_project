@@ -10,45 +10,44 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- *
  * @TableName article
  */
-@TableName(value ="article")
+@TableName(value = "article")
 @Data
 public class Article implements Serializable {
     /**
-     *文章id
+     * 文章id
      */
     @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
-     *文章标题
+     * 文章标题
      */
     private String title;
 
     /**
-     *内容
+     * 内容
      */
     private String content;
 
     /**
-     *类别id
+     * 类别id
      */
     private Long cid;
 
     /**
-     *用户id
+     * 用户id
      */
     private Long uid;
 
     /**
-     *创建时间
+     * 创建时间
      */
     private Date create_time;
 
     /**
-     *更新时间
+     * 更新时间
      */
     private Date update_time;
 
@@ -68,12 +67,12 @@ public class Article implements Serializable {
         }
         Article other = (Article) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
-            && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()))
-            && (this.getCid() == null ? other.getCid() == null : this.getCid().equals(other.getCid()))
-            && (this.getUid() == null ? other.getUid() == null : this.getUid().equals(other.getUid()))
-            && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
-            && (this.getUpdate_time() == null ? other.getUpdate_time() == null : this.getUpdate_time().equals(other.getUpdate_time()));
+                && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
+                && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()))
+                && (this.getCid() == null ? other.getCid() == null : this.getCid().equals(other.getCid()))
+                && (this.getUid() == null ? other.getUid() == null : this.getUid().equals(other.getUid()))
+                && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
+                && (this.getUpdate_time() == null ? other.getUpdate_time() == null : this.getUpdate_time().equals(other.getUpdate_time()));
     }
 
     @Override
