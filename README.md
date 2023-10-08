@@ -1,4 +1,4 @@
-# 微博客项目（openAPI3）
+# 微博客项目（SpringBoot3+Redis+MybatisPlus）
 ### 框架
 * SpringBoot3
 * Spring6
