@@ -42,4 +42,23 @@ public class ArticleController {
         List<Article> articleList = articleService.getArticleList(article);
         return Result.ok(articleList);
     }
+
+    /**
+     * 增加文章
+     *
+     * @param article
+     * @return
+     */
+    @PostMapping("insertArticle")
+    @Operation(summary = "增加单个文章")
+    @Parameters(value = {@Parameter(name = "文章", required = false)})
+    public Result<List<Article>> insertArticle(@RequestBody(required = false) Article article) {
+        log.info("接收参数:" + article.toString());
+        Boolean inserted = articleService.insertArticle(article);
+        if (inserted) {
+            return Result.ok();
+        } else {
+            return Result.fail();
+        }
+    }
 }

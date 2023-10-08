@@ -13,8 +13,18 @@ import java.util.List;
 public interface ArticleService extends IService<Article> {
     /**
      * 根据条件获取文章列表
+     *
      * @param article
      * @return
      */
     List<Article> getArticleList(Article article);
+
+    /**
+     * 增加文章
+     *
+     * @param article
+     * @return
+     */
+
+    Boolean insertArticle(Article article);
 }

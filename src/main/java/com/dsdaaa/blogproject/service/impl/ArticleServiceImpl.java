@@ -36,6 +36,18 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
         List<Article> list = articleMapper.selectList(queryWrapper);
         return list;
     }
+
+    /**
+     * 增加文章
+     *
+     * @param article
+     * @return
+     */
+    @Override
+    public Boolean insertArticle(Article article) {
+        int insert = articleMapper.insert(article);
+        return true;
+    }
 }
 
 
