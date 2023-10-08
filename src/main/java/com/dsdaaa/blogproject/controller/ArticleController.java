@@ -62,7 +62,7 @@ public class ArticleController {
      * @return
      */
     @DeleteMapping("/deleteById/{id}")
-    @Operation(summary = "根据id获取文章")
+    @Operation(summary = "根据id删除文章")
     @Parameters(value = {@Parameter(name = "文章id", required = false)})
     public Result<Boolean> deleteArtcle(@PathVariable Long id) {
         log.info("接收参数:" + id);
