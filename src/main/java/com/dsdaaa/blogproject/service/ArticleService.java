@@ -27,4 +27,20 @@ public interface ArticleService extends IService<Article> {
      */
 
     Boolean insertArticle(Article article);
+
+    /**
+     * 根据id查询文章
+     *
+     * @param id
+     * @return
+     */
+    Article getArticleById(Long id);
+
+    /**
+     * 更新文章
+     *
+     * @param article
+     * @return
+     */
+    Integer update(Article article);
 }

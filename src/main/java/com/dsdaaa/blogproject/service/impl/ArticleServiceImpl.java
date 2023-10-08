@@ -48,6 +48,30 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
         int insert = articleMapper.insert(article);
         return true;
     }
+
+    /**
+     * 根据id查询文章
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Article getArticleById(Long id) {
+        Article article = articleMapper.selectById(id);
+        return article;
+    }
+
+    /**
+     * 更新文章
+     *
+     * @param article
+     * @return
+     */
+    @Override
+    public Integer update(Article article) {
+        int i = articleMapper.updateById(article);
+        return i;
+    }
 }
 
 

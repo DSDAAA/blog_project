@@ -9,10 +9,7 @@ import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -44,6 +41,21 @@ public class ArticleController {
     }
 
     /**
+     * 根据id查询文章
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("articleId")
+    @Operation(summary = "根据id获取文章")
+    @Parameters(value = {@Parameter(name = "文章id", required = false)})
+    public Result<Article> getArticleList(@RequestParam Long id) {
+        log.info("接收参数:" + id);
+        Article articleById = articleService.getArticleById(id);
+        return Result.ok(articleById);
+    }
+
+    /**
      * 增加文章
      *
      * @param article
@@ -52,7 +64,7 @@ public class ArticleController {
     @PostMapping("insertArticle")
     @Operation(summary = "增加单个文章")
     @Parameters(value = {@Parameter(name = "文章", required = false)})
-    public Result<List<Article>> insertArticle(@RequestBody(required = false) Article article) {
+    public Result insertArticle(@RequestBody(required = false) Article article) {
         log.info("接收参数:" + article.toString());
         Boolean inserted = articleService.insertArticle(article);
         if (inserted) {
@@ -60,5 +72,14 @@ public class ArticleController {
         } else {
             return Result.fail();
         }
+    }
+
+    @PutMapping("update")
+    @Operation(summary = "更新文章")
+    @Parameters(value = {@Parameter(name = "文章", required = false)})
+    public Result updateArticle(@RequestBody(required = false) Article article) {
+        log.info("接收参数:" + article.toString());
+        Integer update = articleService.update(article);
+        return Result.ok(update);
     }
 }
