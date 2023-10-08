@@ -1,10 +1,10 @@
-package com.dsdaaa.blog_project.service;
+package com.dsdaaa.blogproject.service;
 
-import com.dsdaaa.blog_project.domain.Article;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dsdaaa.blogproject.domain.Article;
 
 /**
-* @author 13180
+* @author DunSton
 * @description 针对表【article】的数据库操作Service
 * @createDate 2023-10-07 18:08:33
 */

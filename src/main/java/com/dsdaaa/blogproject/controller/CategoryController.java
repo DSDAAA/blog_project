@@ -1,16 +1,18 @@
-package com.dsdaaa.blog_project.controller;
+package com.dsdaaa.blogproject.controller;
 
-import com.dsdaaa.blog_project.service.UserService;
+import com.dsdaaa.blogproject.service.CategoryService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 类别控制层
+ */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/category")
 @Tag(name = "body参数")
-public class UserController {
+public class CategoryController {
     @Resource
-    UserService userService;
+    CategoryService categoryService;
 }

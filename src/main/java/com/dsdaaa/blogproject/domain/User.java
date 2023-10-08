@@ -1,53 +1,54 @@
-package com.dsdaaa.blog_project.domain;
+package com.dsdaaa.blogproject.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  *
- * @TableName article
+ * @TableName user
  */
-@TableName(value ="article")
+@TableName(value ="user")
 @Data
-public class Article implements Serializable {
+public class User implements Serializable {
     /**
-     *
+     *用户id
      */
     @TableId(type = IdType.AUTO)
-    private Long id;
-
-    /**
-     *
-     */
-    private String title;
-
-    /**
-     *
-     */
-    private String content;
-
-    /**
-     *
-     */
-    private Long cid;
-
-    /**
-     *
-     */
     private Long uid;
 
     /**
-     *
+     *用户名
+     */
+    private String username;
+
+    /**
+     *密码
+     */
+    private String password;
+
+    /**
+     *手机号
+     */
+    private String phone;
+
+    /**
+     *简介
+     */
+    private String introduction;
+
+    /**
+     *创建时间
      */
     private Date create_time;
 
     /**
-     *
+     *更新时间
      */
     private Date update_time;
 
@@ -65,12 +66,12 @@ public class Article implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Article other = (Article) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
-            && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()))
-            && (this.getCid() == null ? other.getCid() == null : this.getCid().equals(other.getCid()))
-            && (this.getUid() == null ? other.getUid() == null : this.getUid().equals(other.getUid()))
+        User other = (User) that;
+        return (this.getUid() == null ? other.getUid() == null : this.getUid().equals(other.getUid()))
+            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
+            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
+            && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
+            && (this.getIntroduction() == null ? other.getIntroduction() == null : this.getIntroduction().equals(other.getIntroduction()))
             && (this.getCreate_time() == null ? other.getCreate_time() == null : this.getCreate_time().equals(other.getCreate_time()))
             && (this.getUpdate_time() == null ? other.getUpdate_time() == null : this.getUpdate_time().equals(other.getUpdate_time()));
     }
@@ -79,11 +80,11 @@ public class Article implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());
-        result = prime * result + ((getContent() == null) ? 0 : getContent().hashCode());
-        result = prime * result + ((getCid() == null) ? 0 : getCid().hashCode());
         result = prime * result + ((getUid() == null) ? 0 : getUid().hashCode());
+        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
+        result = prime * result + ((getIntroduction() == null) ? 0 : getIntroduction().hashCode());
         result = prime * result + ((getCreate_time() == null) ? 0 : getCreate_time().hashCode());
         result = prime * result + ((getUpdate_time() == null) ? 0 : getUpdate_time().hashCode());
         return result;
@@ -95,11 +96,11 @@ public class Article implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", title=").append(title);
-        sb.append(", content=").append(content);
-        sb.append(", cid=").append(cid);
         sb.append(", uid=").append(uid);
+        sb.append(", username=").append(username);
+        sb.append(", password=").append(password);
+        sb.append(", phone=").append(phone);
+        sb.append(", introduction=").append(introduction);
         sb.append(", create_time=").append(create_time);
         sb.append(", update_time=").append(update_time);
         sb.append(", serialVersionUID=").append(serialVersionUID);

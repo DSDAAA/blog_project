@@ -1,13 +1,13 @@
-package com.dsdaaa.blog_project.service.impl;
+package com.dsdaaa.blogproject.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.dsdaaa.blog_project.domain.User;
-import com.dsdaaa.blog_project.mapper.UserMapper;
-import com.dsdaaa.blog_project.service.UserService;
+import com.dsdaaa.blogproject.domain.User;
+import com.dsdaaa.blogproject.mapper.UserMapper;
+import com.dsdaaa.blogproject.service.UserService;
 import org.springframework.stereotype.Service;
 
 /**
-* @author 13180
+* @author DunSton
 * @description 针对表【user】的数据库操作Service实现
 * @createDate 2023-10-07 18:08:40
 */

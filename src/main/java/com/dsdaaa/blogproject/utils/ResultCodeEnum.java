@@ -1,4 +1,4 @@
-package com.dsdaaa.blog_project.utils;
+package com.dsdaaa.blogproject.utils;
 
 import lombok.Getter;
 

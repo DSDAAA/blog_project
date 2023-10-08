@@ -1,4 +1,4 @@
-package com.dsdaaa.blog_project;
+package com.dsdaaa.blogproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
