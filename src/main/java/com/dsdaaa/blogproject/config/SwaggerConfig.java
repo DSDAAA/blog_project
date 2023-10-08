@@ -1,4 +1,4 @@
-package com.dsdaaa.blog_project.config;
+package com.dsdaaa.blogproject.config;
 
 import cn.hutool.core.util.RandomUtil;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -13,9 +13,9 @@ import java.util.Map;
 
 /***
  * 创建Swagger配置
- * @since:knife4j-springdoc-openapi-demo 1.0
- * @author <a href="mailto:xiaoymin@foxmail.com">xiaoymin@foxmail.com</a>
- * 2020/03/15 20:40
+ * @since:blogproject
+ * @author DSDAAA
+ * 2023/10/7
  */
 @Configuration
 public class SwaggerConfig {
@@ -48,8 +48,7 @@ public class SwaggerConfig {
                 .info(new Info()
                         .title("微头条系统API")
                         .version("1.0")
-
-                        .description( "Knife4j集成springdoc-openapi")
+                        .description( "SpringBoot3+Redis+Mybatis+MybatisPlus")
                         .termsOfService("http://doc.xiaominfo.com")
                         .license(new License().name("Apache 2.0")
                                 .url("http://doc.xiaominfo.com")));
