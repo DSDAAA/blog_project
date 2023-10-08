@@ -15,8 +15,7 @@ mybatis:
 server:
   port: 8001
 
-
-# springdoc-openapi????
+# springdoc-openapi
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
@@ -28,7 +27,7 @@ springdoc:
     - group: 'default'
       paths-to-match: '/**'
       packages-to-scan: com.xiaominfo.knife4j.demo.web
-# knife4j???????????????
+# knife4j
 knife4j:
   enable: true
   setting:
