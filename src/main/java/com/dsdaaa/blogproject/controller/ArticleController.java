@@ -21,6 +21,7 @@ import java.util.List;
 @RequestMapping("/article")
 @Tag(name = "文章接口")
 @Slf4j
+@CrossOrigin
 public class ArticleController {
     @Resource
     ArticleService articleService;

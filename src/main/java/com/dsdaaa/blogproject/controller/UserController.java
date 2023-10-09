@@ -9,10 +9,7 @@ import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 用户控制层
@@ -21,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 @Tag(name = "用户接口")
 @Slf4j
+@CrossOrigin
 public class UserController {
     @Resource
     UserService userService;

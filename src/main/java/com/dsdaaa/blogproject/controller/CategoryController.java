@@ -22,6 +22,7 @@ import java.util.Map;
 @RequestMapping("/category")
 @Tag(name = "类型接口")
 @Slf4j
+@CrossOrigin
 public class CategoryController {
     @Resource
     CategoryService categoryService;
