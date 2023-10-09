@@ -1,9 +1,12 @@
 package com.dsdaaa.blogproject.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.dsdaaa.blogproject.domain.Article;
 import com.dsdaaa.blogproject.domain.Category;
 import com.dsdaaa.blogproject.domain.Category;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * @author DunSton
@@ -13,6 +16,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface CategoryService extends IService<Category> {
     Page findPage(Integer pageNum, Integer pageSize, Category category);
 
+    /**
+     * 获取类别列表
+     *
+     * @param category
+     * @return
+     */
+    List<Category> getCategoryList(Category category);
     /**
      * 增加类别
      *

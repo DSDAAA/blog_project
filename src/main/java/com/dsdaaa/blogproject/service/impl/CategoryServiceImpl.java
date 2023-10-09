@@ -9,6 +9,8 @@ import com.dsdaaa.blogproject.service.CategoryService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author DunSton
  * @description 针对表【category】的数据库操作Service实现
@@ -35,6 +37,20 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category>
         queryWrapper.isNotNull("create_time");
         categoryMapper.selectPage(page, queryWrapper);
         return page;
+    }
+
+    /**
+     * 获取类别列表
+     *
+     * @param category
+     * @return
+     */
+    @Override
+    public List<Category> getCategoryList(Category category) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.isNotNull("cid");
+        List list = categoryMapper.selectList(queryWrapper);
+        return list;
     }
 
     /**

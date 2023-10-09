@@ -1,7 +1,7 @@
 package com.dsdaaa.blogproject.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.dsdaaa.blogproject.domain.Category;
+import com.dsdaaa.blogproject.domain.Article;
 import com.dsdaaa.blogproject.domain.Category;
 import com.dsdaaa.blogproject.service.CategoryService;
 import com.dsdaaa.blogproject.utils.Result;
@@ -13,7 +13,7 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * 类别控制层
@@ -22,7 +22,6 @@ import java.util.Map;
 @RequestMapping("/category")
 @Tag(name = "类型接口")
 @Slf4j
-@CrossOrigin
 public class CategoryController {
     @Resource
     CategoryService categoryService;
@@ -45,6 +44,21 @@ public class CategoryController {
                                  @RequestBody Category category) {
         Page<Category> page = categoryService.findPage(pageNum, pageSize, category);
         return Result.ok(page);
+    }
+
+    /**
+     * 根据条件获取类别列表
+     *
+     * @param category
+     * @return
+     */
+    @PostMapping("queryList")
+    @Operation(summary = "获取类别列表")
+    @Parameters(value = {@Parameter(name = "类别", required = false)})
+    public Result<List<Category>> getArticleList(@RequestBody(required = false) Category category) {
+        log.info("接收参数:" + category.toString());
+        List<Category> categoryList = categoryService.getCategoryList(category);
+        return Result.ok(categoryList);
     }
 
     /**

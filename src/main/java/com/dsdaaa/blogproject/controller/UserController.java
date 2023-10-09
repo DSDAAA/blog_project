@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @Tag(name = "用户接口")
 @Slf4j
-@CrossOrigin
 public class UserController {
     @Resource
     UserService userService;

@@ -32,7 +32,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
     @Override
     public List<Article> getArticleList(Article article) {
         QueryWrapper queryWrapper = new QueryWrapper();
-        queryWrapper.eq("cid", article.getCid());
+        queryWrapper.isNotNull("cid");
         List<Article> list = articleMapper.selectList(queryWrapper);
         return list;
     }

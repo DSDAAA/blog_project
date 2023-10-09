@@ -21,7 +21,6 @@ import java.util.List;
 @RequestMapping("/article")
 @Tag(name = "文章接口")
 @Slf4j
-@CrossOrigin
 public class ArticleController {
     @Resource
     ArticleService articleService;
@@ -32,7 +31,7 @@ public class ArticleController {
      * @param article
      * @return
      */
-    @PostMapping("articleList")
+    @PostMapping("queryList")
     @Operation(summary = "获取文章列表")
     @Parameters(value = {@Parameter(name = "文章", required = false)})
     public Result<List<Article>> getArticleList(@RequestBody(required = false) Article article) {
